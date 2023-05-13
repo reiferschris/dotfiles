@@ -6,7 +6,7 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 CLEAR='\033[0m'
 
-FLAKE="miraculix"
+#FLAKE="idefix"
 SYSTEM="darwinConfigurations.$FLAKE.system"
 
 export NIXPKGS_ALLOW_UNFREE=1

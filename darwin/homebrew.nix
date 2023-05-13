@@ -38,7 +38,6 @@ let
       # docker alternative
       "podman"
       "podman-compose"
-      "nerdctl"
 
       
       #devops

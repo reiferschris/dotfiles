@@ -40,11 +40,6 @@
       flake = false;
     };
 
-    # TODO test without rev
-    materia-theme = {
-      url = "github:nana-4/materia-theme?ref=76cac96ca7fe45dc9e5b9822b0fbb5f4cad47984";
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:
@@ -52,11 +47,8 @@
       nixpkgsConfig = {
         allowUnfree = true;
         allowUnsupportedSystem = false;
-        vivaldi = {
-          proprietaryCodecs = true;
-          enableWideVine = true;
         };
-      };
+
       overlays = with inputs; [
         # feovim.overlay
         # krewfile.overlay
@@ -65,6 +57,8 @@
       user = "chris";
     in
     {
+
+      # macbook air m1 work
       # nix-darwin with home-manager for macOS
       darwinConfigurations.miraculix = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -114,6 +108,58 @@
           }
         ];
       };
+
+      # macbook 13 inch
+      # nix-darwin with home-manager for macOS
+      darwinConfigurations.idefix= darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        # makes all inputs availble in imported files
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./modules
+          ./machines/idefix.nix
+          ./darwin/homebrew.nix
+          ({ pkgs, ... }: {
+            nixpkgs.config = nixpkgsConfig;
+            nixpkgs.overlays = overlays;
+
+            system.stateVersion = 4;
+
+            users.users.${user} = {
+              home = "/Users/${user}";
+              shell = pkgs.zsh;
+            };
+
+            nix = {
+              # enable flakes per default
+              package = pkgs.nixFlakes;
+              settings = {
+                allowed-users = [ user ];
+                experimental-features = [ "nix-command" "flakes" ];
+              };
+            };
+          })
+          home-manager.darwinModule
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              # makes all inputs available in imported files for hm
+              extraSpecialArgs = { inherit inputs; };
+              users.${user} = { ... }: {
+                imports = [
+                  ./home/mac.nix
+                  ./darwin
+                  ./shell
+                  ./desktop/alacritty.nix
+                ];
+                home.stateVersion = stateVersion;
+              };
+            };
+          }
+        ];
+      };
+
 
       # standalone home-manager installation
       homeConfigurations.solid =
