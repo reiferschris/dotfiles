@@ -42,6 +42,7 @@
       bitwarden-cli
       unixtools.watch # watches commands
       crane # container registry tool
+      pass
 
       # gnu binaries
       coreutils-full # installs some gnu versions of linux bins
@@ -52,8 +53,9 @@
       gzip
       findutils
       gawk
+      gnupg
 
-      # programming
+      #programming
       python3
       nodejs
       nodePackages.npm

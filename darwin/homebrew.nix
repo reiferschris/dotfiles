@@ -36,8 +36,7 @@ let
       "ffmpeg"
 
       # docker alternative
-      "podman"
-      "podman-compose"
+      "qemu"
 
       
       #devops
@@ -51,7 +50,10 @@ let
       "hammerspoon" # lua scripting engine
 
       # virtualization
-      "podman-desktop"
+      {
+        name = "podman-desktop";
+        greedy = true;
+      }
       "utm" # virtual machines
 
       # communication
@@ -64,6 +66,7 @@ let
       #Security
       "bitwarden"
       "wireshark" # network sniffer
+      "gpg-suite"
 
       #Code
       "meld" # folder differ
@@ -136,7 +139,7 @@ let
     { path = "/Applications/Bitwarden.app/"; }  
     { path = "/Applications/Rocket.Chat.app/"; }
     { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
-    { path = "/Applications/WezTerm.app/"; }
+    { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
     { path = "/Applications/Firefox.app/"; }
     { path = "/Applications/min.app/"; }
     {

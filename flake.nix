@@ -101,6 +101,7 @@
                   ./darwin
                   ./shell
                   ./desktop/alacritty.nix
+                  ./desktop/wezterm.nix
                 ];
                 home.stateVersion = stateVersion;
               };

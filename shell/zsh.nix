@@ -165,7 +165,7 @@
       pip = "python3 -m pip";
       venv = "python3 -m venv";
       j = "z";
-      docker = "podman";
+      docker = "lima nerdctl";
 
       # programs
       g = "git";
