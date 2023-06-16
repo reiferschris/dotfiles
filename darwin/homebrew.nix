@@ -42,6 +42,9 @@ let
       #devops
       "ansible"
 
+      "browserpass"
+
+
     ];
     casks = [
       # utilities
@@ -118,6 +121,7 @@ let
       "koekeishiya/formulae" # yabai
       "FelixKratz/formulae" # sketchybar
       "borgbackup/tap"
+      "amar1729/formulae"
     ];
   };
 

@@ -135,7 +135,8 @@
     dirHashes = {
       dl = "$HOME/Downloads";
       nix = "$HOME/.nixpkgs";
-      code = "$HOME/code";
+      code = "$HOME/work/gitlab-uzk";
+      work= "$HOME/work";
     };
 
     shellAliases = {
