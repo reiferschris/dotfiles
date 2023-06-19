@@ -13,6 +13,9 @@
       [directory]
       truncation_length = 8
       truncation_symbol = '…/'
+
+      [docker_context]
+      disabled = true 
       '';
   };
 
