@@ -71,7 +71,7 @@
 
   home.file.skhd = {
     target = ".config/skhd/skhdrc";
-    text = let yabai = "/opt/homebrew/bin/yabai"; in
+    text = let yabai = if pkgs.stdenv.hostPlatform.isAarch64 then "/opt/homebrew/bin/yabai" else "/usr/local/bin/yabai"; in
       ''
         # alt + a / u / o / s are blocked due to umlaute
 

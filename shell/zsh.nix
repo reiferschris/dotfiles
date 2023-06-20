@@ -133,6 +133,8 @@
       export BAT_THEME="Catppuccin-frappe"
 
       path+=('~/.rd/bin')
+
+      ssh-add --apple-load-keychain
     '';
 
     dirHashes = {
