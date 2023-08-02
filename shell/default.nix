@@ -61,6 +61,8 @@
       nodePackages.npm
       nodePackages.yarn
       nodePackages.expo-cli
+      cargo
+      php81Packages.composer 
 
       starship # terminal prompt
       slides # terminal presentation tool

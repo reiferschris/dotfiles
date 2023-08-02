@@ -37,12 +37,16 @@ let
 
       # docker alternative
       "qemu"
+      "colima"
+      "docker"
 
       
       #devops
       "ansible"
-
       "browserpass"
+
+      #misc
+      "watson" #timetracking
 
 
     ];
@@ -72,6 +76,7 @@ let
       "gpg-suite"
 
       #Code
+      "beekeeper-studio"
       "meld" # folder differ
       "postman"
       "wezterm"
@@ -137,15 +142,15 @@ let
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/Applications/Thunderbird.app/"; }
-    { path = "/System/Applications/Utilities/Terminal.app/"; }
     { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Logseq.app/"; }
     { path = "/Applications/Bitwarden.app/"; }  
     { path = "/Applications/Rocket.Chat.app/"; }
-    { path = "${pkgs.alacritty}/Applications/Alacritty.app/"; }
     { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
     { path = "/Applications/Firefox.app/"; }
     { path = "/Applications/min.app/"; }
+    { path = "/Applications/Spotify.app/"; }
+    { path = "/Applications/Cisco Jabber.app/"; }
     {
       path = "${config.users.users.${user}.home}/.local/share/";
       section = "others";

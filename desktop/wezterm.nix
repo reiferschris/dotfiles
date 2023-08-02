@@ -10,6 +10,7 @@
 --        default_prog = { "zsh", "--login", "-c", "tmux attach -t dev || tmux new -s dev" },
         keys = {
           {key="n", mods="SHIFT|CTRL", action="ToggleFullScreen"},
+--          {key="9", mods="ALT", action="act.ShowLauncherArgs {flags='FUZZY|WORKSPACES'}},
         }
       }
       '';
