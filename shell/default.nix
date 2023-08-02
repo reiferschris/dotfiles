@@ -2,6 +2,7 @@
   imports = [
     ./zsh.nix
     ./adblock.nix
+    ./nvim.nix
     ./tmux.nix
     ./git.nix
   ];
