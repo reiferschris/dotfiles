@@ -99,20 +99,21 @@ let
       "obs" # stream / recoding software
       "spotify"
       "libreoffice"
-      "vial"
       "raspberry-pi-imager"
       "shottr" # screenshot tool
       "the-unarchiver"
       "vscodium" # unbranded vscode
       "vlc" # media player
       "eul" # mac monitoring
-      "qmk-toolbox" # flashing keyboard
-      "kap" # screen recorder software
       "sf-symbols" # patched font for sketchybar
-      "prusaslicer" # slicer for my printer
       "min" # minimal browser
       "time-out" # blurs screen every x mins
       "vorta" #borg based backup tool
+      #personal
+      "prusaslicer" # slicer for my printer
+      "qmk-toolbox" # flashing keyboard
+      "vial"
+
     ];
     taps = [
       # default
