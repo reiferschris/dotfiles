@@ -10,7 +10,7 @@ build() {
     if [ "$(uname -n)" == "miraculix" ]; then
       export FLAKE="miraculix"
        ./bin/darwin-build $@
-    elif [ "$(uname -n)" == "MacBook-Pro.localdomain" ]; then
+    elif [ "$(uname -n)" == "idefix" ]; then
        export FLAKE="idefix"
        ./bin/darwin-build $@
     elif [ "$(uname)" == "Linux" ]; then
