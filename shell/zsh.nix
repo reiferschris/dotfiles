@@ -246,10 +246,10 @@
         dotExpansion = true;
         keymap = "vi";
       };
-      ssh.identities = [
-        "id_ed25519"
-        "ChristophReifers"
-      ];
+      #ssh.identities = [
+      #  "id_ed25519"
+      #  "ChristophReifers"
+      #];
       #prompt.showReturnVal = true;
       #tmux.autoStartLocal = true;
       pmodules = [
