@@ -153,14 +153,14 @@ let
     { path = "/Applications/Spotify.app/"; }
     { path = "/Applications/Cisco Jabber.app/"; }
     {
-      path = "${config.users.users.${user}.home}/.local/share/";
+      path = "${config.users.users.${user}.home}/work/";
       section = "others";
       options = "--sort name --view grid --display folder";
     }
     {
       path = "${config.users.users.${user}.home}/Downloads";
       section = "others";
-      options = "--sort name --view grid --display stack";
+      options = "--sort dateadded --view grid --display stack";
     }
   ];
 }

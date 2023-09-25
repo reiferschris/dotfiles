@@ -64,7 +64,7 @@
       yabai -m rule --add app="Thunderbird" space=mail
       yabai -m rule --add app="Bitwarden" space=tools
       yabai -m rule --add app="Podman Desktop" space=tools
-      yabai -m rule --add app="Cisco Jabber" space=voice
+      yabai -m rule --add app="Jabber" space=voice
       yabai -m rule --add app="LibreOffice" space=office
       yabai -m rule --add app="Microsoft Word" space=office
       yabai -m rule --add app="Microsoft PowerPoint" space=office
