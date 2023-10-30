@@ -68,6 +68,7 @@ let
       "rocket-chat"
       "thunderbird"
       "cisco-jabber"
+      "webex"
 
 
       #Security
@@ -107,6 +108,7 @@ let
       "eul" # mac monitoring
       "sf-symbols" # patched font for sketchybar
       "min" # minimal browser
+      "chromium"
       "time-out" # blurs screen every x mins
       "vorta" #borg based backup tool
       #personal
@@ -151,7 +153,7 @@ let
     { path = "/Applications/Firefox.app/"; }
     { path = "/Applications/min.app/"; }
     { path = "/Applications/Spotify.app/"; }
-    { path = "/Applications/Cisco Jabber.app/"; }
+    { path = "/Applications/Webex.app/"; }
     {
       path = "${config.users.users.${user}.home}/work/";
       section = "others";

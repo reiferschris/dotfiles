@@ -14,21 +14,21 @@
       yabai -m config external_bar all:39:0
       yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
-      # borders
-      yabai -m config window_border on
-      yabai -m config window_border_width 2
-      yabai -m config window_border_radius 0
-      yabai -m config window_border_blur off
-      yabai -m config active_window_border_color 0xFFF2D5CF
-      yabai -m config normal_window_border_color 0x00FFFFFF
-      yabai -m config insert_feedback_color 0xffd75f5f
+#      # borders
+#      yabai -m config window_border on
+#      yabai -m config window_border_width 2
+#      yabai -m config window_border_radius 0
+#      yabai -m config window_border_blur off
+#      yabai -m config active_window_border_color 0xFFF2D5CF
+#      yabai -m config normal_window_border_color 0x00FFFFFF
+       yabai -m config insert_feedback_color 0xffd75f5f
 
       yabai -m config window_shadow off
 
       # layout
       yabai -m config layout bsp
       yabai -m config auto_balance off
-      yabai -m config window_topmost on
+#      yabai -m config window_topmost on
 
       # gaps
       yabai -m config top_padding    2
@@ -64,7 +64,7 @@
       yabai -m rule --add app="Thunderbird" space=mail
       yabai -m rule --add app="Bitwarden" space=tools
       yabai -m rule --add app="Podman Desktop" space=tools
-      yabai -m rule --add app="Jabber" space=voice
+      yabai -m rule --add app="Webex" space=voice
       yabai -m rule --add app="LibreOffice" space=office
       yabai -m rule --add app="Microsoft Word" space=office
       yabai -m rule --add app="Microsoft PowerPoint" space=office
@@ -123,7 +123,7 @@
 
         # toggle sticky(+float), topmost, picture-in-picture
         alt - p : ${yabai} -m window --toggle sticky; \
-                  ${yabai} -m window --toggle topmost; \
+#                  ${yabai} -m window --toggle topmost; \
                   ${yabai} -m window --toggle pip
 
         # skhdad

@@ -85,8 +85,6 @@
 
       function gclone() { clone github.com:$1 }
 
-      function bclone() { gclone breuerfelix/$1 }
-
       function gsm() { git submodule foreach "$* || :" }
 
       function gitdel() {
@@ -102,33 +100,10 @@
 
       function dci() { docker inspect $(docker-compose ps -q $1) }
 
-      function transfer() {
-        wget --method PUT --body-file=$1 https://up.fbr.ai/$1 -O - -nv
-      }
-
-      function nf() {
-        pushd ~/.nixpkgs
-        nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.miraculix.system"
-        ./result/sw/bin/darwin-rebuild switch --flake ~/.nixpkgs
-      }
-
-      function nfh() {
-        pushd ~/.config/nixpkgs
-        nix --experimental-features "nix-command flakes" build ".#homeConfigurations.solid.activationPackage"
-        ./result/activate
-      }
-
-      function nfs() {
-        pushd ~/.config/nixpkgs
-        sudo nixos-rebuild switch --flake ".#rocky"
-      }
-      
       export FZF_DEFAULT_OPTS=" \
       --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
       --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
       --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
-
-      # export DOCKER_HOST='unix:///Users/chris/.local/share/containers/podman/machine/qemu/podman.sock'
 
       export BAT_THEME="Catppuccin-frappe"
 
@@ -166,7 +141,7 @@
 
       # overrides
       cat = "bat";
-      ssh = "TERM=screen ssh";
+      #ssh = "TERM=screen ssh";
       python = "python3";
       pip = "python3 -m pip";
       venv = "python3 -m venv";
@@ -259,7 +234,7 @@
         "editor"
         "git"
         "terminal"
-        "ssh"
+        #"ssh"
       ];
     };
   };
