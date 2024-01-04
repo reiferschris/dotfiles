@@ -4,6 +4,7 @@
     ./adblock.nix
     ./nvim.nix
     ./tmux.nix
+    ./zellij.nix
     ./git.nix
   ];
 
@@ -95,7 +96,8 @@
     direnv = {
       enable = true;
       enableZshIntegration = true;
-    };
+      nix-direnv.enable = true;
+  };
 
     # vim alternative
     helix = {

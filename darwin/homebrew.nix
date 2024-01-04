@@ -67,7 +67,6 @@ let
       "signal" # messenger
       "rocket-chat"
       "thunderbird"
-      "cisco-jabber"
       "webex"
 
 
@@ -86,8 +85,9 @@ let
       "chromium"
       "firefox"
 
-      #Videotools
+      #Video- &Audiotools
       "mediainfo"
+      "background-music" #use system-audio-output as input for e.g. screenrecordings
 
       #devops
       "rancher"

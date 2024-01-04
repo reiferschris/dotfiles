@@ -2,31 +2,26 @@
   programs.git = {
     enable = true;
     delta.enable = true;
-    userEmail = "test@example.org";
-    userName = "blabla";
-    # TODO: add signing
+    delta.options = {
+      side-by-side = true;
+    };
+    userEmail = "reiferschristoph@gmail.com";
+    userName = "Christoph Reifers";
+    includes = [
+      {
+        condition = "gitdir:~/work/gitlab-uzk/";
+        contents.user.email = "creifers@uni-koeln.de";
+      }
+      {
+        condition = "gitdir:~/work/github/";
+        contents.user.email = "creifers@uni-koeln.de";
+      }
+    ];
     aliases = {
-      cm = "commit";
-      ca = "commit --amend --no-edit";
-      di = "diff";
-      dh = "diff HEAD";
-      pu = "pull";
-      ps = "push";
-      pf = "push --force-with-lease";
-      st = "status -sb";
-      co = "checkout";
-      fe = "fetch";
-      gr = "grep -in";
-      re = "rebase -i";
-      cp = "cherry-pick";
     };
     ignores = [
       ".idea" ".vs" ".vsc" ".vscode" # ide
       ".DS_Store" # mac
-      "node_modules" "npm-debug.log" # npm
-      "__pycache__" "*.pyc" # python
-      ".ipynb_checkpoints" # jupyter
-      "__sapper__" # svelte
     ];
     extraConfig = {
       init = { defaultBranch = "main"; };
