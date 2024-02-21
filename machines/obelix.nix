@@ -10,7 +10,7 @@
   # windows handles time in dual boot
   time.hardwareClockInLocalTime = true;
 
-  networking.hostName = "rocky";
+  networking.hostName = "obelix";
 
   boot = {
     initrd = {
@@ -45,22 +45,12 @@
   # TODO switch to labels
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/48199c45-de75-4a8a-be1b-32b03c29a13b";
+      device = "/dev/disk/by-uuid/8dbc61d8-140d-4119-90a8-c95a901b53c6";
       fsType = "ext4";
     };
     "/boot/efi" = {
       device = "/dev/disk/by-uuid/76EE-E5BC";
       fsType = "vfat";
-    };
-    # shared with windows
-    "/data" = {
-      device = "/dev/disk/by-label/DATA";
-      fsType = "exfat";
-      options = [
-        "defaults"
-        "uid=1000"
-        "gid=100"
-      ];
     };
   };
 
