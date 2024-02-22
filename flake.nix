@@ -9,13 +9,13 @@
   # nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.miraculix.system"
   # ./result/sw/bin/darwin-rebuild switch --flake ~/.nixpkgs
 
-  # rocky
-  # nix --experimental-features "nix-command flakes" build ".#nixosConfigurations.rocky.config.system.build.toplevel"
+  # obelix
+  # nix --experimental-features "nix-command flakes" build ".#nixosConfigurations.obelix.config.system.build.toplevel"
   # ./result/bin/switch-to-configuration switch
   # or if you want to edit boot entry
-  # sudo nixos-rebuild switch --flake ".#rocky"
+  # sudo nixos-rebuild switch --flake ".#obelix"
   # or if you want to install from scratch
-  # sudo nixos-install --flake github:breuerfelix/dotfiles#rocky
+  # sudo nixos-install --flake github:breuerfelix/dotfiles#obelix
 
 
   inputs = {
@@ -26,6 +26,11 @@
     };
     darwin = {
       url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    disko = {
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -42,7 +47,7 @@
 
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, darwin, home-manager, disko, ... }@inputs:
     let
       nixpkgsConfig = {
         allowUnfree = true;
@@ -160,48 +165,16 @@
         ];
       };
 
-
-      # standalone home-manager installation
-      homeConfigurations.solid =
-        let
-          system = "x86_64-linux";
-          # modifies pkgs to allow unfree packages
-          pkgs = import nixpkgs {
-            inherit system;
-            config = nixpkgsConfig;
-            overlays = overlays;
-          };
-        in
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          # makes all inputs available in imported files
-          extraSpecialArgs = { inherit inputs; };
-          modules = [
-            ./modules
-            ./home/linux.nix
-            ./shell
-            ({ ... }: {
-              home.stateVersion = stateVersion;
-              # home-manager manages itself
-              programs.home-manager.enable = true;
-
-              home = {
-                username = user;
-                homeDirectory = "/home/${user}";
-              };
-            })
-          ];
-        };
-
       # nixos system
-      nixosConfigurations.rocky = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.obelix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         # makes all inputs availble in imported files
         specialArgs = { inherit inputs; inherit user; };
         modules = [
           ./modules
-          ./machines/rocky.nix
+          ./machines/obelix.nix
           ./system
+          disko.nixosModules.disko
           ({ pkgs, ... }: {
             nixpkgs.config = nixpkgsConfig;
             nixpkgs.overlays = overlays;
@@ -233,7 +206,6 @@
               users.${user} = { ... }: {
                 imports = [
                   ./home/linux.nix
-                  ./modules/base16.nix
                   ./shell
                   ./desktop
                 ];

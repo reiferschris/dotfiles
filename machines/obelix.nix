@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./obelix-disko-config.nix
   ];
 
   services.xserver = {
@@ -29,30 +30,30 @@
     extraModulePackages = [ ];
     cleanTmpDir = true;
 
-    loader = {
-      systemd-boot = {
-        enable = true;
-        # /boot/efi is a small partition
-        configurationLimit = 5;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-    };
+#    loader = {
+#      systemd-boot = {
+#        enable = true;
+#        # /boot/efi is a small partition
+#        configurationLimit = 5;
+#      };
+#      efi = {
+#        canTouchEfiVariables = true;
+#        efiSysMountPoint = "/boot/efi";
+#      };
+#    };
   };
 
   # TODO switch to labels
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/8dbc61d8-140d-4119-90a8-c95a901b53c6";
-      fsType = "ext4";
-    };
-    "/boot/efi" = {
-      device = "/dev/disk/by-uuid/76EE-E5BC";
-      fsType = "vfat";
-    };
-  };
+#  fileSystems = {
+#    "/" = {
+#      device = "/dev/disk/by-uuid/8dbc61d8-140d-4119-90a8-c95a901b53c6";
+#      fsType = "ext4";
+#    };
+#    "/boot/efi" = {
+#      device = "/dev/disk/by-uuid/76EE-E5BC";
+#      fsType = "vfat";
+#    };
+#  };
 
   #fileSystems = {
   #"/" = {
