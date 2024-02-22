@@ -2,7 +2,6 @@
   imports = [
     ./wezterm.nix
     ./user.nix
-    ./desktop.nix
   ];
 
   programs = {

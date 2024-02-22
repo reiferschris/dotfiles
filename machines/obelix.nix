@@ -2,6 +2,7 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./obelix-disko-config.nix
+    ./desktop.nix
   ];
 
   services.xserver = {
@@ -30,17 +31,17 @@
     extraModulePackages = [ ];
     cleanTmpDir = true;
 
-#    loader = {
-#      systemd-boot = {
-#        enable = true;
-#        # /boot/efi is a small partition
-#        configurationLimit = 5;
-#      };
-#      efi = {
-#        canTouchEfiVariables = true;
-#        efiSysMountPoint = "/boot/efi";
-#      };
-#    };
+    loader = {
+      systemd-boot = {
+        enable = true;
+        # /boot/efi is a small partition
+        configurationLimit = 5;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
   };
 
   # TODO switch to labels
