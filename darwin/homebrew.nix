@@ -39,6 +39,8 @@ let
       "qemu"
       "colima"
       "docker"
+      "docker-compose"
+      "docker-machine"
 
       
       #devops
@@ -111,6 +113,8 @@ let
       "chromium"
       "time-out" # blurs screen every x mins
       "vorta" #borg based backup tool
+      "ubersicht"
+
       #personal
       "prusaslicer" # slicer for my printer
       "qmk-toolbox" # flashing keyboard
@@ -120,10 +124,10 @@ let
     taps = [
       # default
       "homebrew/bundle"
-      "homebrew/cask"
+      # "homebrew/cask"
       "homebrew/cask-drivers"
       "homebrew/cask-fonts"
-      "homebrew/core"
+      # "homebrew/core"
       "homebrew/services"
       # custom
       "koekeishiya/formulae" # yabai
