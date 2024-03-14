@@ -6,8 +6,10 @@
   home.file.zellij = {
     target = ".config/zellij/config.kdl";
     text = ''
-      simplified_ui true
-      default_layout "default"
+      simplified_ui false
+      session_serialization true
+      pane_viewport_serialization true
+      scrollback_lines_to_serialize 20000
       keybinds clear-defaults=true {
         normal {
           bind "Ctrl o" { SwitchToMode "tmux"; }
@@ -34,7 +36,14 @@
           bind "c" { NewTab; SwitchToMode "Normal"; }
           bind "Ctrl l" { GoToNextTab; SwitchToMode "Normal"; }
           bind "Ctrl h" { GoToPreviousTab; SwitchToMode "Normal"; }
-        }
+          bind "w" {
+             LaunchOrFocusPlugin "zellij:session-manager" {
+                 floating true
+                 move_to_focused_tab true
+             };
+             SwitchToMode "Normal"
+             }      
+          }
       }
       theme "catppuccin-frappe"
     '';
