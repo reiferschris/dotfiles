@@ -1,9 +1,6 @@
 {
   description = "My Machines";
 
-  # solid
-  # nix --experimental-features "nix-command flakes" build ".#homeConfigurations.solid.activationPackage"
-  # ./result/activate
 
   # miraculix
   # nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.miraculix.system"
@@ -15,7 +12,7 @@
   # or if you want to edit boot entry
   # sudo nixos-rebuild switch --flake ".#obelix"
   # or if you want to install from scratch
-  # sudo nixos-install --flake github:breuerfelix/dotfiles#obelix
+  # sudo nixos-install --flake github:reiferschris/dotfiles#obelix
 
 
   inputs = {
@@ -36,12 +33,6 @@
 
     forgit = {
       url = "github:wfxr/forgit";
-      flake = false;
-    };
-
-    # custom cursor
-    breeze = {
-      url = "github:KDE/breeze";
       flake = false;
     };
 
