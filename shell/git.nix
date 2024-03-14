@@ -11,6 +11,7 @@
       {
         condition = "gitdir:~/work/gitlab-uzk/";
         contents.user.email = "creifers@uni-koeln.de";
+        path = "~/.config/git/git.opencast.config";
       }
       {
         condition = "gitdir:~/work/github/";
@@ -31,12 +32,12 @@
         rebase = true;
       };
       push.autoSetupRemote = true;
-      #url = {
-        #"ssh://git@github.com" = { insteadOf = "https://github.com"; };
-      #};
       delta = {
         line-numbers = true;
       };
     };
+  };
+  programs.git-credential-oauth = {
+    enable = true;
   };
 }
