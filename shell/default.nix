@@ -45,6 +45,7 @@
       unixtools.watch # watches commands
       crane # container registry tool
       pass
+      pandoc
 
       # gnu binaries
       coreutils-full # installs some gnu versions of linux bins
@@ -68,6 +69,7 @@
 
       starship # terminal prompt
       slides # terminal presentation tool
+      timewarrior #terminal timetracking tool
 
       # custom nixFlakes command for home-manager standalone
       (pkgs.writeShellScriptBin "nx" ''
