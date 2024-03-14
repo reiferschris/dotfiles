@@ -38,7 +38,7 @@
       yabai -m config window_gap     2
 
       # rules
-      yabai -m rule --add app="^System Preferences$" manage=off
+      yabai -m rule --add app="^System.*Preferences$" manage=off
 
       # workspace management
       yabai -m space 1 --label term
