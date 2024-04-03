@@ -106,8 +106,8 @@
         shift + alt - l : ${yabai} -m window --swap east
 
         # increase window size
-        shift + alt - a : ${yabai} -m window --resize left:-20:0
-        shift + alt - s : ${yabai} -m window --resize right:-20:0
+        # shift + alt - a : ${yabai} -m window --resize left:-20:0
+        # shift + alt - s : ${yabai} -m window --resize right:-20:0
 
         # skhdad
         shift + alt - r : skhd --restart-service; yabai --restart-service; brew services restart sketchybar

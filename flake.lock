@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "breeze": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1695176117,
-        "narHash": "sha256-ztC6Y6gTSmjeXtujjcUo6TAsFHExIGZtDths/TZh8XY=",
-        "owner": "KDE",
-        "repo": "breeze",
-        "rev": "8c938fb5b90ca48ba2261804ffba6663ef4914a6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "KDE",
-        "repo": "breeze",
-        "type": "github"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -109,7 +93,6 @@
     },
     "root": {
       "inputs": {
-        "breeze": "breeze",
         "darwin": "darwin",
         "disko": "disko",
         "forgit": "forgit",

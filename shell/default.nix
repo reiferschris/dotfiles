@@ -69,7 +69,7 @@
 
       starship # terminal prompt
       slides # terminal presentation tool
-      timewarrior #terminal timetracking tool
+      glab # gitlab commandline tool
 
       # custom nixFlakes command for home-manager standalone
       (pkgs.writeShellScriptBin "nx" ''

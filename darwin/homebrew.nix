@@ -22,13 +22,10 @@ let
       "yabai" # tiling window manager
 
       # sketchybar
-      "sketchybar" # macos bar alternative
       "ifstat" # network
 
       # borg
       "borgbackup"
-
-      "spotify-tui"
 
       "languagetool"
       
@@ -48,15 +45,11 @@ let
       "browserpass"
 
       #misc
-      "watson" #timetracking
-
 
     ];
     casks = [
       # utilities
-      "browserosaurus" # choose browser on each link
       "macfuse" # file system utilities
-      "hammerspoon" # lua scripting engine
 
       # virtualization
       {
@@ -79,7 +72,6 @@ let
 
       #Code
       "beekeeper-studio"
-      "meld" # folder differ
       "postman"
       "wezterm"
 
@@ -110,8 +102,6 @@ let
       "eul" # mac monitoring
       "sf-symbols" # patched font for sketchybar
       "min" # minimal browser
-      "chromium"
-      "time-out" # blurs screen every x mins
       "vorta" #borg based backup tool
       "ubersicht"
 
@@ -125,7 +115,6 @@ let
       # default
       "homebrew/bundle"
       # "homebrew/cask"
-      "homebrew/cask-drivers"
       "homebrew/cask-fonts"
       # "homebrew/core"
       "homebrew/services"
@@ -149,7 +138,6 @@ let
   local.dock.enable = true;
   local.dock.entries = [
     { path = "/Applications/Thunderbird.app/"; }
-    { path = "/Applications/VSCodium.app/"; }
     { path = "/Applications/Logseq.app/"; }
     { path = "/Applications/Bitwarden.app/"; }  
     { path = "/Applications/Rocket.Chat.app/"; }
