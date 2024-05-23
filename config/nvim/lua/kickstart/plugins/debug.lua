@@ -13,10 +13,12 @@ return {
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
+    'nvim-neotest/nvim-nio',
 
     -- Installs the debug adapters for you
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
+    'theHamsta/nvim-dap-virtual-text',
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
@@ -38,9 +40,10 @@ return {
       -- online, please don't ask me how to install them :)
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
-        'delve',
+        'php-debug-adapter',
       },
     }
+    require("nvim-dap-virtual-text").setup()
 
     -- Basic debugging keymaps, feel free to change to your liking!
     vim.keymap.set('n', '<F5>', dap.continue)
@@ -78,6 +81,22 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup()
+    -- require('dap-go').setup()
+    dap.adapters.php = {
+      type = 'executable',
+      command = 'node',
+      args = { '/Users/chris/work/github/vscode-php-debug/out/phpDebug.js' },
+    }
+
+    dap.configurations.php = {
+      {
+        type = 'php',
+        request = 'launch',
+        name = 'Listen for Xdebug',
+        port = 9003,
+        serverSourceRoot = '/var/www/html',
+        localSourceRoot = './'
+      }
+    }
   end,
 }

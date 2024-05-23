@@ -18,14 +18,19 @@
         contents.user.email = "creifers@uni-koeln.de";
       }
     ];
-    aliases = {
-    };
+    aliases = { };
     ignores = [
-      ".idea" ".vs" ".vsc" ".vscode" # ide
+      ".idea"
+      ".vs"
+      ".vsc"
+      ".vscode" # ide
       ".DS_Store" # mac
     ];
     extraConfig = {
       init = { defaultBranch = "main"; };
+      fetch = {
+        prune = true;
+      };
       pull = {
         ff = false;
         commit = false;

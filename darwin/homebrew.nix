@@ -38,6 +38,7 @@ let
       "docker"
       "docker-compose"
       "docker-machine"
+      "docker-credential-helper"
 
       
       #devops
@@ -69,6 +70,7 @@ let
       "bitwarden"
       "wireshark" # network sniffer
       "gpg-suite"
+      "yubico-yubikey-manager"
 
       #Code
       "beekeeper-studio"
@@ -78,6 +80,7 @@ let
       #Browser     
       "chromium"
       "firefox"
+      "qutebrowser"
 
       #Video- &Audiotools
       "mediainfo"

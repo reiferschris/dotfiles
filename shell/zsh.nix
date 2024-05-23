@@ -50,7 +50,7 @@
       base = "#303446"
       mantle = "#292c3c"
       crust = "#232634"
-      '';
+    '';
   };
 
   programs.zsh = {
@@ -77,17 +77,15 @@
     };
 
     initExtra = ''
+      zmodload zsh/zprof
+      zprof
+
       # fixes starship swallowing newlines
       precmd() {
         precmd() {
           echo
         }
       }
-
-      #export LD_LIBRARY_PATH=${lib.makeLibraryPath [pkgs.stdenv.cc.cc]}
-
-      # TODO: handle secrets somehow
-      #source /secrets/environment.bash
 
       bindkey '^e' edit-command-line
       # this is backspace
@@ -113,7 +111,6 @@
       function take() { builtin cd $(mktemp -d) }
       function vit() { nvim $(mktemp) }
 
-      function lgc() { git commit --signoff -m "$*" }
 
       function clone() { git clone git@$1.git }
 
@@ -121,18 +118,6 @@
 
       function gsm() { git submodule foreach "$* || :" }
 
-      function gitdel() {
-        git tag -d $1
-        git push --delete origin $1
-      }
-
-      function lg() {
-        git add --all
-        git commit --signoff -a -m "$*"
-        git push
-      }
-
-      function dci() { docker inspect $(docker-compose ps -q $1) }
 
       export FZF_DEFAULT_OPTS=" \
       --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
@@ -141,16 +126,14 @@
 
       export BAT_THEME="Catppuccin-frappe"
 
-      path+=('~/.rd/bin')
-
-      ssh-add --apple-load-keychain
+      # ssh-add --apple-load-keychain
     '';
 
     dirHashes = {
       dl = "$HOME/Downloads";
       nix = "$HOME/.nixpkgs";
       code = "$HOME/work/gitlab-uzk";
-      work= "$HOME/work";
+      work = "$HOME/work";
     };
 
     shellAliases = {
@@ -200,8 +183,6 @@
 
       # terminal cheat sheet
       cht = "cht.sh";
-      # lists node_modules folder and their size
-      npkill = "npx npkill";
 
       # utilities
       psf = "ps -aux | grep";

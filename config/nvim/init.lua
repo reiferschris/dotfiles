@@ -112,7 +112,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -218,8 +218,8 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.autoformat',
+  require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -227,7 +227,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-{ import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -343,17 +343,17 @@ local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
     require('telescope.builtin').live_grep({
-      search_dirs = {git_root},
+      search_dirs = { git_root },
     })
   end
 end
 
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
 
--- Custom find_files function to search in hidden files 
+-- Custom find_files function to search in hidden files
 local function custom_find_files()
   require('telescope.builtin').find_files({
-    find_command = {'rg', '--files', '--hidden', '-g', '!.git' },
+    find_command = { 'rg', '--files', '--hidden', '-g', '!.git', '--no-ignore' },
   })
 end
 
@@ -388,8 +388,8 @@ vim.defer_fn(function()
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = true,
+    -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+    auto_install = true,
 
     highlight = { enable = true },
     indent = { enable = true },
@@ -520,14 +520,14 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-   ansiblels = {},
-   dockerls= {},
-   docker_compose_language_service = {},
-   jsonls = {},
-   html = {},
-   rnix = {},
-   intelephense = {},
-   tailwindcss = {},
+  ansiblels = {},
+  dockerls = {},
+  docker_compose_language_service = {},
+  jsonls = {},
+  html = {},
+  rnix = {},
+  intelephense = {},
+  tailwindcss = {},
 
   lua_ls = {
     Lua = {
