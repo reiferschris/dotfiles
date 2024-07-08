@@ -32,7 +32,6 @@
       comma # nix-shell wrapper
       grc # colored log output
       gitAndTools.delta # pretty diff tool
-      thefuck # auto correct commands
       sshfs # mount folders via ssh
       gh # github cli tool
       tealdeer # community driven man pages
@@ -65,7 +64,7 @@
       nodePackages.yarn
       nodePackages.expo-cli
       cargo
-      php81Packages.composer 
+      php81Packages.composer
 
       starship # terminal prompt
       slides # terminal presentation tool
@@ -99,7 +98,7 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
-  };
+    };
 
     # vim alternative
     helix = {
