@@ -23,8 +23,7 @@
   fonts = {
     # recommended on screens larger than fullhd
     # optimizeForVeryHighDPI = true;
-    fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       #corefonts # TODO fix
       recursive
@@ -46,6 +45,6 @@
     };
     keyboard = {
       enableKeyMapping = true;
-      };
+    };
   };
 }
