@@ -62,7 +62,6 @@
       nodejs
       nodePackages.npm
       nodePackages.yarn
-      nodePackages.expo-cli
       cargo
       php81Packages.composer
 
