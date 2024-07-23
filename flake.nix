@@ -43,7 +43,7 @@
       nixpkgsConfig = {
         allowUnfree = true;
         allowUnsupportedSystem = false;
-        };
+      };
 
       overlays = with inputs; [
         # feovim.overlay
@@ -107,7 +107,7 @@
 
       # macbook 13 inch
       # nix-darwin with home-manager for macOS
-      darwinConfigurations.idefix= darwin.lib.darwinSystem {
+      darwinConfigurations.idefix = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         # makes all inputs availble in imported files
         specialArgs = { inherit inputs; };
@@ -147,7 +147,7 @@
                   ./home/mac.nix
                   ./darwin
                   ./shell
-                  ./desktop/alacritty.nix
+                  ./desktop/wezterm.nix
                 ];
                 home.stateVersion = stateVersion;
               };
