@@ -108,16 +108,6 @@
         builtin cd $1
       }
 
-      function take() { builtin cd $(mktemp -d) }
-      function vit() { nvim $(mktemp) }
-
-
-      function clone() { git clone git@$1.git }
-
-      function gclone() { clone github.com:$1 }
-
-      function gsm() { git submodule foreach "$* || :" }
-
 
       export FZF_DEFAULT_OPTS=" \
       --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
@@ -142,72 +132,30 @@
       cp = "cp -i";
       mkdir = "mkdir -p";
       df = "df -h";
-      free = "free -h";
       du = "du -sh";
-      susu = "sudo su";
-      op = "xdg-open";
-      del = "rm -rf";
-      sdel = "sudo rm -rf";
-      lst = "ls --tree -I .git";
-      lsl = "ls -l";
-      lsa = "ls -a";
-      null = "/dev/null";
-      tmux = "tmux -u";
-      tu = "tmux -u";
-      tua = "tmux a -t";
 
       # overrides
       cat = "bat";
       #ssh = "TERM=screen ssh";
-      python = "python3";
-      pip = "python3 -m pip";
-      venv = "python3 -m venv";
       j = "z";
       # docker = "lima nerdctl";
 
       # programs
       g = "git";
-      dk = "docker";
-      dc = "docker-compose";
-      pd = "podman";
-      pc = "podman-compose";
-      li = "lima nerdctl";
-      lc = "limactl";
-      sc = "sudo systemctl";
-      poe = "poetry";
-      fb = "pcmanfm .";
-      space = "ncdu";
       diff = "delta";
-      py = "python";
       awake = "caffeinate";
 
       # terminal cheat sheet
       cht = "cht.sh";
 
       # utilities
-      psf = "ps -aux | grep";
-      lsf = "ls | grep";
-      search = "sudo fd . '/' | grep"; # TODO replace with ripgrep
       shut = "sudo shutdown -h now";
-      tssh = "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null";
-      socks = "ssh -D 1337 -q -C -N";
-
-      # clean
-      dklocal = "docker run --rm -it -v `PWD`:/usr/workdir --workdir=/usr/workdir";
-      dkclean = "docker container rm $(docker container ls -aq)";
-
-      caps = "xdotool key Caps_Lock";
-      gclean = "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done";
-      ew = "nvim -c ':cd ~/vimwiki' ~/vimwiki";
-      weather = "curl -4 http://wttr.in/Koeln";
 
       # nix
       ne = "nvim -c ':cd ~/.nixpkgs' ~/.nixpkgs";
       clean = "nix-collect-garbage -d && nix-store --gc && nix-store --verify --check-contents --repair";
       nsh = "nix-shell";
       nse = "nix search nixpkgs";
-
-      aupt = "sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y";
 
     };
 
@@ -236,12 +184,6 @@
         dotExpansion = true;
         keymap = "vi";
       };
-      #ssh.identities = [
-      #  "id_ed25519"
-      #  "ChristophReifers"
-      #];
-      #prompt.showReturnVal = true;
-      #tmux.autoStartLocal = true;
       pmodules = [
         "autosuggestions"
         "completion"
