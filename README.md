@@ -66,7 +66,7 @@ nix flake lock --update-input <input>
 
 - distro: macOS / Nixos 
 - window manager: yabai
-- bar: currently sketchybar soon simple bar[WIP]
+- bar: übersicht
 - terminal: wezterm + tmux/zellij
 - shell: zsh + pretzo
 - editor: neovim

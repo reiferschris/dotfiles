@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs, lib, ... }:
 let
   user = "chris"; in
 {
   imports = [
-   ./dock
+    ./dock
   ];
-  
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -21,14 +21,13 @@ let
       # broken nix builds
       "yabai" # tiling window manager
 
-      # sketchybar
       "ifstat" # network
 
       # borg
       "borgbackup"
 
       "languagetool"
-      
+
       #Video
       "ffmpeg"
 
@@ -40,7 +39,7 @@ let
       "docker-machine"
       "docker-credential-helper"
 
-      
+
       #devops
       "ansible"
       "browserpass"
@@ -103,7 +102,6 @@ let
       "vscodium" # unbranded vscode
       "vlc" # media player
       "eul" # mac monitoring
-      "sf-symbols" # patched font for sketchybar
       "min" # minimal browser
       "vorta" #borg based backup tool
       "ubersicht"
@@ -123,7 +121,6 @@ let
       "homebrew/services"
       # custom
       "koekeishiya/formulae" # yabai
-      "FelixKratz/formulae" # sketchybar
       "borgbackup/tap"
       "amar1729/formulae"
     ];
@@ -142,7 +139,7 @@ let
   local.dock.entries = [
     { path = "/Applications/Thunderbird.app/"; }
     { path = "/Applications/Logseq.app/"; }
-    { path = "/Applications/Bitwarden.app/"; }  
+    { path = "/Applications/Bitwarden.app/"; }
     { path = "/Applications/Rocket.Chat.app/"; }
     { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
     { path = "/Applications/Firefox.app/"; }
