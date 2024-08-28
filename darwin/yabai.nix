@@ -37,8 +37,12 @@
             yabai -m config right_padding  2
             yabai -m config window_gap     2
 
+            # refresh my Übersicht bar when the space changes
+            yabai -m signal --add event=space_changed \
+                action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-index-jsx\"'"
+            
             # rules
-            yabai -m rule --add app="^System.*Preferences$" manage=off
+            yabai -m rule --add app="^System.*Settings$" manage=off
 
             # workspace management
             yabai -m space 1 --label term
@@ -110,7 +114,7 @@
         # shift + alt - s : ${yabai} -m window --resize right:-20:0
 
         # skhdad
-        shift + alt - r : skhd --restart-service; yabai --restart-service
+        shift + alt - r : skhd --restart-service; yabai --restart-service; yabai -m rule --apply
       '';
   };
 }
