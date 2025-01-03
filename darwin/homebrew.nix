@@ -12,6 +12,7 @@ let
       # "zap" removes manually installed brews and casks
       cleanup = "zap";
       autoUpdate = true;
+      upgrade = true;
     };
     brews = [
       "lima" # docker alternative
@@ -45,17 +46,15 @@ let
       "browserpass"
 
       #misc
+      "iamb"
 
     ];
     casks = [
       # utilities
       "macfuse" # file system utilities
+      "domzilla-caffeine"
 
       # virtualization
-      {
-        name = "podman-desktop";
-        greedy = true;
-      }
       "utm" # virtual machines
 
       # communication
@@ -85,9 +84,6 @@ let
       "mediainfo"
       "background-music" #use system-audio-output as input for e.g. screenrecordings
 
-      #devops
-      "rancher"
-
       #Others
       "logseq" #notes
       "inkscape"
@@ -102,7 +98,6 @@ let
       "vscodium" # unbranded vscode
       "vlc" # media player
       "eul" # mac monitoring
-      "min" # minimal browser
       "vorta" #borg based backup tool
       "ubersicht"
 
@@ -142,8 +137,9 @@ let
     { path = "/Applications/Bitwarden.app/"; }
     { path = "/Applications/Rocket.Chat.app/"; }
     { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
+    { path = "/Applications/qutebrowser.app/"; }
+    { path = "/Applications/Beekeeper Studio.app/"; }
     { path = "/Applications/Firefox.app/"; }
-    { path = "/Applications/min.app/"; }
     { path = "/Applications/Spotify.app/"; }
     { path = "/Applications/Webex.app/"; }
     {

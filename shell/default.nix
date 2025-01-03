@@ -10,7 +10,7 @@
 
   home = {
     packages = with pkgs; [
-      neovim # customized by overlay
+      neovim
 
       # net tools
       #bind # marked as broken
@@ -64,6 +64,8 @@
       nodePackages.yarn
       cargo
       php81Packages.composer
+      blade-formatter
+      unixODBCDrivers.mariadb
 
       starship # terminal prompt
       slides # terminal presentation tool
@@ -79,7 +81,6 @@
       "$HOME/go/bin"
       "$HOME/.local/bin"
       "$HOME/.cargo/bin"
-      "$HOME/.krew/bin"
     ];
     sessionVariables = {
       GO111MODULE = "on";
@@ -97,11 +98,6 @@
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
-    };
-
-    # vim alternative
-    helix = {
-      enable = true;
     };
 
     # shell integrations are enabled by default

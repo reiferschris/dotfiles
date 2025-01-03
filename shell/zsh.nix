@@ -52,6 +52,9 @@
       crust = "#232634"
     '';
   };
+  programs.fish = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -77,9 +80,6 @@
     };
 
     initExtra = ''
-      zmodload zsh/zprof
-      zprof
-
       # fixes starship swallowing newlines
       precmd() {
         precmd() {
@@ -116,7 +116,7 @@
 
       export BAT_THEME="Catppuccin-frappe"
 
-      # ssh-add --apple-load-keychain
+      ssh-add --apple-load-keychain
     '';
 
     dirHashes = {

@@ -56,18 +56,19 @@
             yabai -m space 9 --label voice
             yabai -m space 10 --label office 
             yabai -m space 11 --label finder 
+            yabai -m space 12 --label db 
 
             # assign apps to spaces
             yabai -m rule --add app="WezTerm" space=term
             yabai -m rule --add app="Logseq" space=notes
             yabai -m rule --add app="Firefox" space=www
-            yabai -m rule --add app="Min" space=www2
+            yabai -m rule --add app="qutebrowser" space=www2
             yabai -m rule --add app="Rocket.Chat" space=chat
             yabai -m rule --add app="Signal" space=chat
             yabai -m rule --add app="Spotify" space=music
             yabai -m rule --add app="Thunderbird" space=mail
             yabai -m rule --add app="Bitwarden" space=tools
-            yabai -m rule --add app="Podman Desktop" space=tools
+            yabai -m rule --add app="Beekeeper Studio" space=db
             yabai -m rule --add app="Webex" space=voice
             yabai -m rule --add app="LibreOffice" space=office
             yabai -m rule --add app="Microsoft Word" space=office
@@ -76,6 +77,7 @@
             yabai -m rule --add app="Finder" space=finder
             yabai -m rule --add app="Activity Monitor" space=tools
             yabai -m rule --add app="System Settings" space=tools
+            yabai -m rule --add app="Cisco Secure Client" space=tools
 
             echo "yabai configuration loaded.."
     '';
