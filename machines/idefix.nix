@@ -11,9 +11,6 @@
     zsh.enable = true;
   };
 
-  services.nix-daemon.enable = true;
-
-
   networking = {
     hostName = "idefix";
     knownNetworkServices = [ "Wi-Fi" ];
@@ -23,11 +20,8 @@
   fonts = {
     # recommended on screens larger than fullhd
     # optimizeForVeryHighDPI = true;
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      #corefonts # TODO fix
-      recursive
+    packages = with pkgs; [
+      nerd-fonts.fira-code
     ];
   };
 
@@ -45,6 +39,6 @@
     };
     keyboard = {
       enableKeyMapping = true;
-      };
+    };
   };
 }

@@ -11,9 +11,6 @@
     zsh.enable = true;
   };
 
-  services.nix-daemon.enable = true;
-
-
   networking = {
     hostName = "miraculix";
     knownNetworkServices = [ "Wi-Fi" ];
@@ -24,9 +21,7 @@
     # recommended on screens larger than fullhd
     # optimizeForVeryHighDPI = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-      #corefonts # TODO fix
-      recursive
+      nerd-fonts.fira-code
     ];
   };
 

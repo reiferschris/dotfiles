@@ -64,7 +64,7 @@
           ./modules
           ./machines/miraculix.nix
           ./darwin/homebrew.nix
-          ({ pkgs, ... }: {
+          ({ pkgs, lib, ... }: {
             nixpkgs.config = nixpkgsConfig;
             nixpkgs.overlays = overlays;
 
@@ -72,19 +72,19 @@
 
             users.users.${user} = {
               home = "/Users/${user}";
-              shell = pkgs.zsh;
+              shell = lib.mkDefault pkgs.zsh;
             };
 
             nix = {
               # enable flakes per default
-              package = pkgs.nixFlakes;
+              package = pkgs.nixVersions.stable;
               settings = {
                 allowed-users = [ user ];
                 experimental-features = [ "nix-command" "flakes" ];
               };
             };
           })
-          home-manager.darwinModule
+          home-manager.darwinModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
@@ -115,7 +115,7 @@
           ./modules
           ./machines/idefix.nix
           ./darwin/homebrew.nix
-          ({ pkgs, ... }: {
+          ({ pkgs, lib, ... }: {
             nixpkgs.config = nixpkgsConfig;
             nixpkgs.overlays = overlays;
 
@@ -123,12 +123,12 @@
 
             users.users.${user} = {
               home = "/Users/${user}";
-              shell = pkgs.zsh;
+              shell = lib.mkDefault pkgs.zsh;
             };
 
             nix = {
               # enable flakes per default
-              package = pkgs.nixFlakes;
+              package = pkgs.nixVersions.stable;
               settings = {
                 allowed-users = [ user ];
                 experimental-features = [ "nix-command" "flakes" ];
@@ -180,7 +180,7 @@
 
             nix = {
               # enable flakes per default
-              package = pkgs.nixFlakes;
+              package = pkgs.nixVersions.stable;
               settings = {
                 allowed-users = [ user ];
                 experimental-features = [ "nix-command" "flakes" ];

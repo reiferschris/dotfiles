@@ -73,7 +73,7 @@
 
       # custom nixFlakes command for home-manager standalone
       (pkgs.writeShellScriptBin "nx" ''
-        exec ${pkgs.nixFlakes}/bin/nix --experimental-features "nix-command flakes" "$@"
+        exec ${pkgs.nixVersions.stable}/bin/nix --experimental-features "nix-command flakes" "$@"
       '')
     ];
 

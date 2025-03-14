@@ -42,7 +42,7 @@ let
 
 
       #devops
-      "ansible"
+      { name = "ansible@9"; }
       "browserpass"
 
       #misc
@@ -62,6 +62,7 @@ let
       "rocket-chat"
       "thunderbird"
       "webex"
+      "element"
 
 
       #Security
@@ -74,6 +75,7 @@ let
       "beekeeper-studio"
       "postman"
       "wezterm"
+      "ghostty"
 
       #Browser     
       "chromium"
