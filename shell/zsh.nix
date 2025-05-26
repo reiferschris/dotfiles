@@ -79,7 +79,7 @@
       share = true;
     };
 
-    initExtra = ''
+    initContent = ''
       # fixes starship swallowing newlines
       precmd() {
         precmd() {
@@ -115,6 +115,8 @@
       --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
       export BAT_THEME="Catppuccin-frappe"
+
+      export PATH="/opt/homebrew/opt/ansible@9/bin:$PATH"
 
       ssh-add --apple-load-keychain
     '';
@@ -170,11 +172,11 @@
         file = "nix-shell.plugin.zsh";
         src = "${pkgs.zsh-nix-shell}/share/zsh-nix-shell";
       }
-      {
-        name = "forgit";
-        file = "forgit.plugin.zsh";
-        src = "${pkgs.forgit}/share/forgit";
-      }
+      # {
+      # name = "forgit";
+      # file = "forgit.plugin.zsh";
+      # src = "${pkgs.forgit}/share/forgit";
+      # }
     ];
     prezto = {
       enable = true;

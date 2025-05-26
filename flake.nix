@@ -30,12 +30,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    forgit = {
-      url = "github:wfxr/forgit";
-      flake = false;
-    };
-
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, disko, ... }@inputs:
@@ -44,11 +38,6 @@
         allowUnfree = true;
         allowUnsupportedSystem = false;
       };
-
-      overlays = with inputs; [
-        # feovim.overlay
-        # krewfile.overlay
-      ];
       stateVersion = "22.05";
       user = "chris";
     in
@@ -66,7 +55,6 @@
           ./darwin/homebrew.nix
           ({ pkgs, lib, ... }: {
             nixpkgs.config = nixpkgsConfig;
-            nixpkgs.overlays = overlays;
 
             system.stateVersion = 4;
 
@@ -117,7 +105,6 @@
           ./darwin/homebrew.nix
           ({ pkgs, lib, ... }: {
             nixpkgs.config = nixpkgsConfig;
-            nixpkgs.overlays = overlays;
 
             system.stateVersion = 4;
 
@@ -168,7 +155,6 @@
           disko.nixosModules.disko
           ({ pkgs, ... }: {
             nixpkgs.config = nixpkgsConfig;
-            nixpkgs.overlays = overlays;
 
             system.stateVersion = stateVersion;
 

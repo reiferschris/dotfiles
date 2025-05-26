@@ -52,11 +52,13 @@
             yabai -m space 5 --label mail
             yabai -m space 6 --label music
             yabai -m space 7 --label chat
-            yabai -m space 8 --label tools 
-            yabai -m space 9 --label voice
-            yabai -m space 10 --label office 
-            yabai -m space 11 --label finder 
-            yabai -m space 12 --label db 
+            yabai -m space 8 --label chat2
+            yabai -m space 9 --label tools 
+            yabai -m space 10 --label voice
+            yabai -m space 11 --label office 
+            yabai -m space 12 --label finder 
+            yabai -m space 13 --label db 
+            yabai -m space 13 --label settings
 
             # assign apps to spaces
             yabai -m rule --add app="WezTerm" space=term
@@ -64,7 +66,8 @@
             yabai -m rule --add app="Firefox" space=www
             yabai -m rule --add app="qutebrowser" space=www2
             yabai -m rule --add app="Rocket.Chat" space=chat
-            yabai -m rule --add app="Signal" space=chat
+            yabai -m rule --add app="Element" space=chat
+            yabai -m rule --add app="Signal" space=chat2
             yabai -m rule --add app="Spotify" space=music
             yabai -m rule --add app="Thunderbird" space=mail
             yabai -m rule --add app="Bitwarden" space=tools

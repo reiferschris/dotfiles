@@ -14,7 +14,6 @@
   networking = {
     hostName = "miraculix";
     knownNetworkServices = [ "Wi-Fi" ];
-    # disabled in favor of my pi-hole at home
   };
 
   fonts = {
@@ -41,5 +40,6 @@
     keyboard = {
       enableKeyMapping = true;
     };
+    primaryUser = "chris";
   };
 }
