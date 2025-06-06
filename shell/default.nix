@@ -6,6 +6,7 @@
     ./tmux.nix
     ./zellij.nix
     ./git.nix
+    ./ghostty.nix
   ];
 
   home = {
@@ -46,6 +47,7 @@
       crane # container registry tool
       pass
       pandoc
+
 
       # gnu binaries
       coreutils-full # installs some gnu versions of linux bins

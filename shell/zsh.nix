@@ -15,7 +15,7 @@
       disabled = true 
 
       # Sets user-defined palette
-      palette = "catppuccin_frappe"
+      palette = "catppuccin_macchiato"
 
       [character]
       # Note the use of Catppuccin color 'maroon'
@@ -23,37 +23,34 @@
       error_symbol = "[❯](red)"
       vimcmd_symbol = "[❮](green)"
 
-      [palettes.catppuccin_frappe]
-      rosewater = "#f2d5cf"
-      flamingo = "#eebebe"
-      pink = "#f4b8e4"
-      mauve = "#ca9ee6"
-      red = "#e78284"
-      maroon = "#ea999c"
-      peach = "#ef9f76"
-      yellow = "#e5c890"
-      green = "#a6d189"
-      teal = "#81c8be"
-      sky = "#99d1db"
-      sapphire = "#85c1dc"
-      blue = "#8caaee"
-      lavender = "#babbf1"
-      text = "#c6d0f5"
-      subtext1 = "#b5bfe2"
-      subtext0 = "#a5adce"
-      overlay2 = "#949cbb"
-      overlay1 = "#838ba7"
-      overlay0 = "#737994"
-      surface2 = "#626880"
-      surface1 = "#51576d"
-      surface0 = "#414559"
-      base = "#303446"
-      mantle = "#292c3c"
-      crust = "#232634"
+      [palettes.catppuccin_macchiato]
+      rosewater = "#f4dbd6"
+      flamingo = "#f0c6c6"
+      pink = "#f5bde6"
+      mauve = "#c6a0f6"
+      red = "#ed8796"
+      maroon = "#ee99a0"
+      peach = "#f5a97f"
+      yellow = "#eed49f"
+      green = "#a6da95"
+      teal = "#8bd5ca"
+      sky = "#91d7e3"
+      sapphire = "#7dc4e4"
+      blue = "#8aadf4"
+      lavender = "#b7bdf8"
+      text = "#cad3f5"
+      subtext1 = "#b8c0e0"
+      subtext0 = "#a5adcb"
+      overlay2 = "#939ab7"
+      overlay1 = "#8087a2"
+      overlay0 = "#6e738d"
+      surface2 = "#5b6078"
+      surface1 = "#494d64"
+      surface0 = "#363a4f"
+      base = "#24273a"
+      mantle = "#1e2030"
+      crust = "#181926"
     '';
-  };
-  programs.fish = {
-    enable = true;
   };
 
   programs.zsh = {
@@ -114,7 +111,7 @@
       --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
       --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
 
-      export BAT_THEME="Catppuccin-frappe"
+      export BAT_THEME="Catppuccin-macchiato"
 
       export PATH="/opt/homebrew/opt/ansible@9/bin:$PATH"
 

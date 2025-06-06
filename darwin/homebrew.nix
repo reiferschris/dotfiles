@@ -139,6 +139,7 @@ let
     { path = "/Applications/Bitwarden.app/"; }
     { path = "/Applications/Rocket.Chat.app/"; }
     { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
+    { path = "/Applications/Ghostty.app/"; }
     { path = "/Applications/qutebrowser.app/"; }
     { path = "/Applications/Beekeeper Studio.app/"; }
     { path = "/Applications/Firefox.app/"; }
