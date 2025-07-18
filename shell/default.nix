@@ -34,11 +34,11 @@
       grc # colored log output
       gitAndTools.delta # pretty diff tool
       git-credential-manager #oauth client for git
+      git-credential-oauth
       sshfs # mount folders via ssh
       gh # github cli tool
       tealdeer # community driven man pages
       dive # analyse docker images
-      ffmpeg # video editing and cutting
       rclone # sync files
       duf # disk usage
       httpie # awesome alternative to curl
@@ -47,6 +47,11 @@
       crane # container registry tool
       pass
       pandoc
+      tree
+
+      # video tools
+      mediainfo
+      ffmpeg # video editing and cutting
 
 
       # gnu binaries
@@ -70,6 +75,10 @@
       blade-formatter
       unixODBCDrivers.mariadb
 
+      #TUI
+      gitui
+
+      #other
       starship # terminal prompt
       slides # terminal presentation tool
       glab # gitlab commandline tool

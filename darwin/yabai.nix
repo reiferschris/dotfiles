@@ -61,7 +61,6 @@
             yabai -m space 13 --label settings
 
             # assign apps to spaces
-            yabai -m rule --add app="WezTerm" space=term
             yabai -m rule --add app="Logseq" space=notes
             yabai -m rule --add app="Firefox" space=www
             yabai -m rule --add app="qutebrowser" space=www2

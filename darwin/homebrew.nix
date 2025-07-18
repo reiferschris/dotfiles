@@ -74,7 +74,6 @@ let
       #Code
       "beekeeper-studio"
       "postman"
-      "wezterm"
       "ghostty"
 
       #Browser     
@@ -138,7 +137,6 @@ let
     { path = "/Applications/Logseq.app/"; }
     { path = "/Applications/Bitwarden.app/"; }
     { path = "/Applications/Rocket.Chat.app/"; }
-    { path = "${pkgs.wezterm}/Applications/Wezterm.app/"; }
     { path = "/Applications/Ghostty.app/"; }
     { path = "/Applications/qutebrowser.app/"; }
     { path = "/Applications/Beekeeper Studio.app/"; }

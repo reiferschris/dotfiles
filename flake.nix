@@ -50,7 +50,6 @@
         # makes all inputs availble in imported files
         specialArgs = { inherit inputs; };
         modules = [
-          ./modules
           ./machines/miraculix.nix
           ./darwin/homebrew.nix
           ({ pkgs, lib, ... }: {
@@ -84,7 +83,6 @@
                   ./home/mac.nix
                   ./darwin
                   ./shell
-                  ./desktop/wezterm.nix
                 ];
                 home.stateVersion = stateVersion;
               };
@@ -100,7 +98,6 @@
         # makes all inputs availble in imported files
         specialArgs = { inherit inputs; };
         modules = [
-          ./modules
           ./machines/idefix.nix
           ./darwin/homebrew.nix
           ({ pkgs, lib, ... }: {
@@ -134,7 +131,6 @@
                   ./home/mac.nix
                   ./darwin
                   ./shell
-                  ./desktop/wezterm.nix
                 ];
                 home.stateVersion = stateVersion;
               };
