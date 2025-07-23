@@ -354,7 +354,8 @@ require("lazy").setup({
 		},
 		opts = {
 			notify_on_error = false,
-			log_level = vim.log.levels.TRACE,
+			-- leave this log debug here in case I need it again
+			-- log_level = vim.log.levels.DEBUG,
 			format_on_save = function(bufnr)
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
@@ -373,17 +374,15 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				php = { "pretty-php" },
-				blade = { "blade-formatter" },
-				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
-				--
-				-- You can use 'stop_after_first' to run the first available formatter from the list
-				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				php = { "pint", "pretty-php", stop_after_first = true },
+				-- custom blade_formatter that is defined below
+				blade = { "blade_formatter" },
 			},
 			formatters = {
 				blade_formatter = {
-					prepend_args = { "--wrap-attributes=force-expand-multiline" },
+					inherit = false,
+					command = "blade-formatter",
+					args = { "--stdin", "--wrap-attributes=force-expand-multiline" },
 				},
 			},
 		},
