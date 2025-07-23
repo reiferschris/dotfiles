@@ -132,11 +132,14 @@ let
 
   # Fully declarative dock using the latest from Nix Store from https://github.com/dustinlyons/nixos-config/blob/main/darwin/home-manager.nix
   local.dock.enable = true;
+  local.dock.username = user;
   local.dock.entries = [
     { path = "/Applications/Thunderbird.app/"; }
+    { path = "/Applications/Mail.app/"; }
+    { path = "/Applications/Calendar.app/"; }
     { path = "/Applications/Logseq.app/"; }
     { path = "/Applications/Bitwarden.app/"; }
-    { path = "/Applications/Rocket.Chat.app/"; }
+    { path = "/Applications/Element.app/"; }
     { path = "/Applications/Ghostty.app/"; }
     { path = "/Applications/qutebrowser.app/"; }
     { path = "/Applications/Beekeeper Studio.app/"; }
