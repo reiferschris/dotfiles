@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }: {
   programs = {
     zsh = {
-      initExtraBeforeCompInit =
+      initContent =
         let shellenv = if pkgs.stdenv.hostPlatform.isAarch64 then "$(/opt/homebrew/bin/brew shellenv)" else "$(/usr/local/bin/brew shellenv)"; in
         ''
           eval ${shellenv}

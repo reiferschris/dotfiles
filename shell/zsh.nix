@@ -135,7 +135,7 @@
 
       # overrides
       cat = "bat";
-      #ssh = "TERM=screen ssh";
+      ssh = "TERM=xterm ssh";
       j = "z";
       # docker = "lima nerdctl";
 

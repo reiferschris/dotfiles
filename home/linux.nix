@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   programs = {
     zsh = {
-      initExtraBeforeCompInit = ''
+      initConten = ''
         eval "$(starship init zsh)"
       '';
     };
