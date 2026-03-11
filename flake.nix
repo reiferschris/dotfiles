@@ -52,6 +52,7 @@
         modules = [
           ./machines/miraculix.nix
           ./darwin/homebrew.nix
+          ./darwin/aerospace.nix
           ({ pkgs, lib, ... }: {
             nixpkgs.config = nixpkgsConfig;
 

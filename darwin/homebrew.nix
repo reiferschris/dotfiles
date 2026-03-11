@@ -37,6 +37,7 @@ let
       "colima"
       "docker"
       "docker-compose"
+      "docker-buildx"
       "docker-machine"
       "docker-credential-helper"
 
@@ -67,7 +68,6 @@ let
 
       #Security
       "bitwarden"
-      "wireshark" # network sniffer
       "gpg-suite"
       "yubico-yubikey-manager"
 
@@ -75,6 +75,7 @@ let
       "beekeeper-studio"
       "postman"
       "ghostty"
+      "zed"
 
       #Browser     
       "chromium"
@@ -89,7 +90,7 @@ let
       "logseq" #notes
       "inkscape"
       "drawio"
-      "owncloud" #for sync
+      "nextcloud" #for sync
       "obs" # stream / recoding software
       "spotify"
       "libreoffice"

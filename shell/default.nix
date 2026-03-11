@@ -32,7 +32,7 @@
 
       comma # nix-shell wrapper
       grc # colored log output
-      gitAndTools.delta # pretty diff tool
+      delta # pretty diff tool
       git-credential-manager #oauth client for git
       git-credential-oauth
       sshfs # mount folders via ssh
@@ -59,6 +59,7 @@
       gnutar
       gnused
       gnugrep
+      unixtools.getopt
       gnumake
       gzip
       findutils
@@ -67,16 +68,25 @@
 
       #programming
       python3
-      nodejs
-      nodePackages.npm
-      nodePackages.yarn
-      cargo
-      php81Packages.composer
+      # nodePackages_latest.nodejs
+      nodejs_24
+      # nodePackages.npm
+      # nodePackages.yarn
+      rustup
+      cargo-binstall
+      dioxus-cli
+      wasm-bindgen-cli
+      sqlx-cli
+      #nix language server
+      nixd
+      php83Packages.composer
       blade-formatter
       unixODBCDrivers.mariadb
+      zulu11
+      maven
 
       #TUI
-      gitui
+      # gitui
 
       #other
       starship # terminal prompt

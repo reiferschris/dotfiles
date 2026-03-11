@@ -1,15 +1,31 @@
 { config, pkgs, lib, ... }: {
   programs.git = {
     enable = true;
-    delta.enable = true;
-    delta.options = {
-      side-by-side = true;
+    settings = {
+      user = {
+        email = "reiferschristoph@gmail.com";
+        name = "Christoph Reifers";
+      };
+      aliases = { };
+      extraConfig = {
+        init = { defaultBranch = "main"; };
+        fetch = {
+          prune = true;
+        };
+        pull = {
+          ff = false;
+          commit = false;
+          rebase = true;
+        };
+        push.autoSetupRemote = true;
+        delta = {
+          line-numbers = true;
+        };
+      };
     };
-    userEmail = "reiferschristoph@gmail.com";
-    userName = "Christoph Reifers";
     includes = [
       {
-        condition = "gitdir:~/work/gitlab-uzk/";
+        condition = "gitdir:~/work/git-nrw/";
         contents.user.email = "creifers@uni-koeln.de";
         path = "~/.config/git/git.opencast.config";
       }
@@ -18,7 +34,6 @@
         contents.user.email = "creifers@uni-koeln.de";
       }
     ];
-    aliases = { };
     ignores = [
       ".idea"
       ".vs"
@@ -26,20 +41,13 @@
       ".vscode" # ide
       ".DS_Store" # mac
     ];
-    extraConfig = {
-      init = { defaultBranch = "main"; };
-      fetch = {
-        prune = true;
-      };
-      pull = {
-        ff = false;
-        commit = false;
-        rebase = true;
-      };
-      push.autoSetupRemote = true;
-      delta = {
-        line-numbers = true;
-      };
+  };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      side-by-side = true;
     };
   };
+
 }
