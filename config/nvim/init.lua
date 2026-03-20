@@ -374,7 +374,7 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
-				php = { "pint", "pretty-php", stop_after_first = true },
+				php = { "mago", "pint", "pretty-php", stop_after_first = true },
 				-- custom blade_formatter that is defined below
 				blade = { "blade_formatter" },
 			},

@@ -80,6 +80,7 @@
       #nix language server
       nixd
       php83Packages.composer
+      mago #php toolchain rust
       blade-formatter
       unixODBCDrivers.mariadb
       zulu11
