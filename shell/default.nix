@@ -14,7 +14,6 @@
       neovim
 
       # net tools
-      #bind # marked as broken
       nmap
       inetutils
 
@@ -28,7 +27,6 @@
       # htop alternatives
       bottom
       btop
-      #gotop # TODO fix
 
       comma # nix-shell wrapper
       grc # colored log output
@@ -42,7 +40,7 @@
       rclone # sync files
       duf # disk usage
       httpie # awesome alternative to curl
-      # bitwarden-cli
+      bitwarden-cli
       unixtools.watch # watches commands
       crane # container registry tool
       pass
@@ -85,6 +83,10 @@
       unixODBCDrivers.mariadb
       zulu11
       maven
+      opencode
+
+      #devops
+      kubectl
 
       #TUI
       # gitui

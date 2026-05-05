@@ -15,7 +15,7 @@
       disabled = true 
 
       # Sets user-defined palette
-      palette = "catppuccin_macchiato"
+      palette = "catppuccin_latte"
 
       [character]
       # Note the use of Catppuccin color 'maroon'
@@ -50,6 +50,34 @@
       base = "#24273a"
       mantle = "#1e2030"
       crust = "#181926"
+
+      [palettes.catppuccin_latte]
+      rosewater = "#dc8a78"
+      flamingo = "#dd7878"
+      pink = "#ea76cb"
+      mauve = "#8839ef"
+      red = "#d20f39"
+      maroon = "#e64553"
+      peach = "#fe640b"
+      yellow = "#df8e1d"
+      green = "#40a02b"
+      teal = "#179299"
+      sky = "#04a5e5"
+      sapphire = "#209fb5"
+      blue = "#1e66f5"
+      lavender = "#7287fd"
+      text = "#4c4f69"
+      subtext1 = "#5c5f77"
+      subtext0 = "#6c6f85"
+      overlay2 = "#7c7f93"
+      overlay1 = "#8c8fa1"
+      overlay0 = "#9ca0b0"
+      surface2 = "#acb0be"
+      surface1 = "#bcc0cc"
+      surface0 = "#ccd0da"
+      base = "#eff1f5"
+      mantle = "#e6e9ef"
+      crust = "#dce0e8"
     '';
   };
 
@@ -106,12 +134,18 @@
       }
 
 
+      # export FZF_DEFAULT_OPTS=" \
+      # --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
+      # --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
+      # --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
       export FZF_DEFAULT_OPTS=" \
-      --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
-      --color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
-      --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284"
+      --color=bg+:#CCD0DA,bg:#EFF1F5,spinner:#DC8A78,hl:#D20F39 \
+      --color=fg:#4C4F69,header:#D20F39,info:#8839EF,pointer:#DC8A78 \
+      --color=marker:#7287FD,fg+:#4C4F69,prompt:#8839EF,hl+:#D20F39 \
+      --color=selected-bg:#BCC0CC \
+      --color=border:#9CA0B0,label:#4C4F69"
 
-      export BAT_THEME="Catppuccin-macchiato"
+      export BAT_THEME="Catppuccin-latte"
 
       export PATH="/opt/homebrew/opt/ansible@9/bin:$PATH"
 

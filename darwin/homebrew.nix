@@ -16,11 +16,7 @@ let
     };
     brews = [
       "lima" # docker alternative
-      "skhd" # keybinding manager
-
-
-      # broken nix builds
-      "yabai" # tiling window manager
+      # "skhd" # keybinding manager
 
       "ifstat" # network
 
@@ -46,8 +42,6 @@ let
       { name = "ansible@9"; }
       "browserpass"
 
-      #misc
-      "iamb"
 
     ];
     casks = [
@@ -60,8 +54,6 @@ let
 
       # communication
       "signal" # messenger
-      "rocket-chat"
-      "thunderbird"
       "webex"
       "element"
 
@@ -101,12 +93,9 @@ let
       "vlc" # media player
       "eul" # mac monitoring
       "vorta" #borg based backup tool
-      "ubersicht"
 
       #personal
       "prusaslicer" # slicer for my printer
-      "qmk-toolbox" # flashing keyboard
-      "vial"
 
     ];
     taps = [
@@ -135,9 +124,8 @@ let
   local.dock.enable = true;
   local.dock.username = user;
   local.dock.entries = [
-    { path = "/Applications/Thunderbird.app/"; }
-    { path = "/Applications/Mail.app/"; }
-    { path = "/Applications/Calendar.app/"; }
+    { path = "/System/Applications/Mail.app/"; }
+    { path = "/System/Applications/Calendar.app/"; }
     { path = "/Applications/Logseq.app/"; }
     { path = "/Applications/Bitwarden.app/"; }
     { path = "/Applications/Element.app/"; }

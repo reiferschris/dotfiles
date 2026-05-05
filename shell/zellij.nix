@@ -95,7 +95,7 @@
               bind "Enter" { SwitchToMode "Search"; }
           }
       }
-      theme "catppuccin-macchiato"
+      theme "catppuccin-latte"
     '';
   };
 }

@@ -88,10 +88,6 @@
           run = [ "move-node-to-workspace 5" ];
         }
         {
-          "if".app-name-regex-substring = "Spotify";
-          run = [ "move-node-to-workspace 5" ];
-        }
-        {
           "if".app-name-regex-substring = "Webex";
           run = [ "move-node-to-workspace 6" ];
         }
@@ -108,8 +104,12 @@
           run = [ "move-node-to-workspace 8" ];
         }
         {
-          "if".app-name-regex-substring = "Element";
+          "if".app-name-regex-substring = "Spotify";
           run = [ "move-node-to-workspace 8" ];
+        }
+        {
+          "if".app-name-regex-substring = "Element";
+          run = [ "move-node-to-workspace 9" ];
         }
         {
           "if".app-name-regex-substring = "settings";

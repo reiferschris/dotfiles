@@ -3,7 +3,7 @@
   home.file.ghostty = {
     target = ".config/ghostty/config";
     text = ''
-      theme = Catppuccin Macchiato
+      theme = Catppuccin Latte
     '';
   };
 }
