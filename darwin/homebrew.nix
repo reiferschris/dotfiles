@@ -99,12 +99,6 @@ let
 
     ];
     taps = [
-      # default
-      "homebrew/bundle"
-      # "homebrew/cask"
-      "homebrew/cask-fonts"
-      # "homebrew/core"
-      "homebrew/services"
       # custom
       "borgbackup/tap"
       "amar1729/formulae"
