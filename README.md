@@ -9,18 +9,22 @@ the installation instructions are *not* updated for my flake version.
 ### macos
 
 ```bash
-# install nix
-sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon
+# install nix via determinate systems installer
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+git clone https://github.com:reiferschris/dotfiles.git ~/.nixpkgs
+# make sure your hostname is set to the correct machine
 sudo reboot
 
-nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
-nix-channel --update
-nix-shell '<darwin>' -A installer
-darwin-rebuild switch
+# -- for nix-darwin only --
+# build the system
+cd ~/.nixpkgs
+nix --experimental-features "nix-command flakes" build ".#darwinConfigurations.brummi.system"
+# switch to new system
+sudo ./result/sw/bin/darwin-rebuild switch --flake ~/.nixpkgs
 
-# install these dotfiles
-git clone https://github.com/reiferschris/dotfiles.git ~/.nixpkgs
-darwin-rebuild switch
+# all in one command
+nix run nix-darwin -- switch --flake ~/.nixpkgs
 ```
 
 ### remote ssh server with home-manager
@@ -65,8 +69,7 @@ nix flake lock --update-input <input>
 ## content
 
 - distro: macOS / Nixos 
-- window manager: yabai
-- bar: übersicht
+- window manager: aerospace
 - terminal: ghostty + zellij
 - shell: zsh + pretzo
 - editor: neovim
