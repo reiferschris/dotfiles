@@ -48,6 +48,7 @@ let
       # utilities
       "macfuse" # file system utilities
       "domzilla-caffeine"
+      "eurkey" # keyboard layout
 
       # virtualization
       "utm" # virtual machines
@@ -106,7 +107,6 @@ let
       # "homebrew/core"
       "homebrew/services"
       # custom
-      "koekeishiya/formulae" # yabai
       "borgbackup/tap"
       "amar1729/formulae"
     ];

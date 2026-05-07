@@ -39,7 +39,6 @@
         alt-shift-4 = "move-node-to-workspace 4";
         alt-shift-5 = "move-node-to-workspace 5";
         alt-shift-6 = "move-node-to-workspace 6";
-        # overlaps with alt-u for 'ue' on eurkey. come with an alternative
         alt-shift-7 = "move-node-to-workspace 7";
         alt-shift-8 = "move-node-to-workspace 8";
         alt-shift-9 = "move-node-to-workspace 9";
