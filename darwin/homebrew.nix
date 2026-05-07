@@ -62,7 +62,7 @@ let
       #Security
       "bitwarden"
       "gpg-suite"
-      "yubico-yubikey-manager"
+      "yubico-authenticator"
 
       #Code
       "beekeeper-studio"
@@ -77,7 +77,6 @@ let
 
       #Video- &Audiotools
       "mediainfo"
-      "background-music" #use system-audio-output as input for e.g. screenrecordings
 
       #Others
       "logseq" #notes
